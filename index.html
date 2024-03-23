@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calificaciones</title>
+    <link  rel="stylesheet" href="index.css">
+</head>
+<body>
+      <div id="formulario">
+       <label for="nombre">Nombre del Alumno:</label>
+
+       <input type="text" id="nombre" required>
+       <label for="grupo">Grupo:</label>
+
+       <input type="text" id="grupo" required>
+       <label for="semestre">Semestre:</label>
+
+       <input type="number" id="semestre" required>
+       <label for="parcial1">Calificación Primer Parcial:</label>
+
+       <input type="number" id="parcial1" required>
+       <label for="parcial2">Calificación Segundo Parcial:</label>
+
+       <input type="number" id="parcial2" required>
+       <label for="parcial3">Calificación Tercer Parcial:</label>
+
+       <input type="number" id="parcial3" required>
+       <button type="button" onclick="calcularPromedio()">Calcular Promedio</button>
+       <p id="resultado"></p>
+      </div>
+   
+       <script>
+        function calcularPromedio() {
+        const parcial1 = parseFloat(document.getElementById('parcial1').value);
+        const parcial2 = parseFloat(document.getElementById('parcial2').value);
+        const parcial3 = parseFloat(document.getElementById('parcial3').value);
+        const promedio = (parcial1 + parcial2 + parcial3) / 3;
+        const resultadoElement = document.getElementById('resultado');
+     if (promedio >= 6) {
+        resultadoElement.textContent = `¡Aprobaste tilin! Promedio: ${promedio.toFixed(2)}`;
+    } else {
+        resultadoElement.textContent = `Reprobaste tilin :( Promedio: ${promedio.toFixed(2)}`;
+           }
+        }
+       </script>
+    </body>
+</html>
